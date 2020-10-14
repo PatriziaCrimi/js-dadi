@@ -1,0 +1,10 @@
+body {
+  font-family: 'Nunito', sans-serif;
+}
+
+/******************** Media Query *********************/
+
+/* Responsive - Breakpoint Extra Large 1200px xl */
+@media screen and (min-width: 1200px) {
+
+}
