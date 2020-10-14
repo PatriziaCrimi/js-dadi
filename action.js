@@ -1,6 +1,8 @@
 // Variables and constants initialization
 var player_name = prompt('Enter your name.');
 var number_of_games = parseInt(prompt('How many games do you want to play? Please enter a number.'));
+var score_pc = [];
+var score_player = [];
 
 // ******************* Check data in Console *******************
 console.log('GAME INFO');
@@ -17,7 +19,10 @@ for (i = 0; i < number_of_games; i++) {
   console.log('*** Match number ' + match_number + ' ***.');
   // Roll of the dice
   var random_number_pc = Math.floor(Math.random() * 6) + 1;
+  score_pc.push(random_number_pc);
   var random_number_player = Math.floor(Math.random() * 6) + 1;
+  score_player.push(random_number_player);
+
   // ******** Winner Check ********
   if (random_number_pc > random_number_player) {
     // You lose
@@ -36,8 +41,44 @@ for (i = 0; i < number_of_games; i++) {
     console.log(' ');
   }
 }
-/*
-// ******************* Play again *******************
-var play_again = prompt('Do you want to play again? Please enter YES or NO.');
-if ()
-*/
+
+// ******************* Check Highest Score & Output in Console *******************
+
+// Computer's highest score
+var highest_score_pc = score_pc[0];
+
+for (i = 0; i < score_pc.length; i++) {
+  if (score_pc[i] > highest_score_pc) {
+    highest_score_pc = score_pc[i];
+  }
+}
+console.log('COMPUTER\'S RESULTS')
+console.log('The computer\'s highest score is: ' + highest_score_pc + '.');
+console.log('The array containing the pc score has ' + score_pc.length + ' elements.');
+console.log('They are: ' + score_pc + '.');
+console.log(' ');
+
+// Player's highest score
+var highest_score_player = score_player[0];
+
+for (i = 0; i < score_player.length; i++) {
+  if (score_player[i] > highest_score_player) {
+    highest_score_player = score_player[i];
+  }
+}
+console.log(player_name + '\'s RESULTS')
+console.log(player_name + '\'s highest score is: ' + highest_score_player + '.');
+console.log('The array containing the player\'s score has ' + score_player.length + ' elements.');
+console.log('They are: ' + score_player + '.');
+console.log(' ');
+
+// Highest score of the game
+console.log('HIGHEST SCORE');
+
+if (highest_score_player > highest_score_pc) {
+  console.log('The highest score is ' + highest_score_player + ' and it was scored by ' + player_name + '.');
+} else if (highest_score_player < highest_score_pc) {
+  console.log('The highest score is ' + highest_score_pc + ' and it was scored by the computer.');
+} else {
+  console.log('The highest score is ' + highest_score_player + ' and it was scored by both the computer and ' + player_name + '.');
+}
