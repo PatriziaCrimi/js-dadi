@@ -11,38 +11,50 @@ console.log('The second player is the computer.');
 console.log('You are going to play ' + number_of_games + ' games.')
 console.log(' ');
 
-// ******************* Game & Output in Console *******************
+// ******************* Print data in HTML *******************
+document.getElementsByClassName('player-name').innerHTML = player_name;
+document.getElementById('number-of-games').innerHTML = number_of_games;
+
+// ************* Game - Output in Console & HTML *************
 console.log('SCORE');
 for (i = 0; i < number_of_games; i++) {
   // Match counts
   var match_number = i + 1;
   console.log('*** Match number ' + match_number + ' ***.');
   // Roll of the dice
-  var random_number_pc = Math.floor(Math.random() * 6) + 1;
-  score_pc.push(random_number_pc);
+  alert('Your turn! Roll the dice!');
   var random_number_player = Math.floor(Math.random() * 6) + 1;
   score_player.push(random_number_player);
+  var random_number_pc = Math.floor(Math.random() * 6) + 1;
+  score_pc.push(random_number_pc);
 
   // ******** Winner Check ********
   if (random_number_pc > random_number_player) {
-    // You lose
+    // *** You lose ***
     console.log('The winner is the computer! It scored ' + random_number_pc + '.');
     console.log('You scored ' + random_number_player + '.');
     console.log(' ');
+    // Print in HTML
+    document.getElementById('winner').innerHTML = 'The winner is the computer! It scored ' + random_number_pc + '.';
+    document.getElementById('loser').innerHTML = 'You scored ' + random_number_player + '.';
   } else if (random_number_pc < random_number_player) {
-    // You win
-    console.log('You won! ');
-    console.log(player_name + ' scored ' + random_number_player + '.');
+    // *** You win ***
+    console.log('The winner is ' + player_name + '! You scored ' + random_number_player + '.');
     console.log('The computer scored ' + random_number_pc + '.');
     console.log(' ');
+    // Print in HTML
+    document.getElementById('winner').innerHTML = 'The winner is ' + player_name + '! You scored ' + random_number_player + '.';
+    document.getElementById('loser').innerHTML = 'The computer scored ' + random_number_pc + '.';
   } else {
-    // No winners
+    // *** No winners ***
     console.log('There are no winners. You both scored ' + random_number_pc + '!');
     console.log(' ');
+    // Print in HTML
+    document.getElementById('winner').innerHTML = 'There are no winners. You both scored ' + random_number_pc + '!';
   }
 }
 
-// ******************* Check Highest Score & Output in Console *******************
+// ************** Check Highest Score - Output in Console **************
 
 // Computer's highest score
 var highest_score_pc = score_pc[0];
@@ -72,13 +84,26 @@ console.log('The array containing the player\'s score has ' + score_player.lengt
 console.log('They are: ' + score_player + '.');
 console.log(' ');
 
+// *** Output in HTML ***
+document.getElementById('highest-score-pc').innerHTML = highest_score_pc;
+document.getElementById('highest-score-player').innerHTML = highest_score_player;
+
 // Highest score of the game
 console.log('HIGHEST SCORE');
 
 if (highest_score_player > highest_score_pc) {
   console.log('The highest score is ' + highest_score_player + ' and it was scored by ' + player_name + '.');
+  // Print in HTML
+  document.getElementById('highest-score').innerHTML = highest_score_player;
+  document.getElementById('best-player').innerHTML = player_name;
 } else if (highest_score_player < highest_score_pc) {
   console.log('The highest score is ' + highest_score_pc + ' and it was scored by the computer.');
+  // Print in HTML
+  document.getElementById('highest-score').innerHTML = highest_score_pc;
+  document.getElementById('best-player').innerHTML = 'the computer';
 } else {
   console.log('The highest score is ' + highest_score_player + ' and it was scored by both the computer and ' + player_name + '.');
+  // Print in HTML
+  document.getElementById('highest-score').innerHTML = highest_score_player;
+  document.getElementById('best-player').innerHTML = 'both the computer and ' + player_name + '.';
 }

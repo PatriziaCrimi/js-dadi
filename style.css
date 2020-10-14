@@ -2,9 +2,22 @@ body {
   font-family: 'Nunito', sans-serif;
 }
 
+span {
+  font-weight: 700;
+}
+
+#page-wrapper {
+  width: 100vw;
+  height: 100vh;
+  background: rgb(34,193,195);
+  background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+}
+
 /******************** Media Query *********************/
 
-/* Responsive - Breakpoint Extra Large 1200px xl */
-@media screen and (min-width: 1200px) {
-
+/* Responsive - Breakpoint Medium 768px md */
+@media screen and (min-width: 768px) {
+  h2, h3, p {
+    text-align: center;
+  }
 }
