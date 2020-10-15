@@ -12,7 +12,11 @@ console.log('You are going to play ' + number_of_games + ' games.')
 console.log(' ');
 
 // ******************* Print data in HTML *******************
-document.getElementsByClassName('player-name').innerHTML = player_name;
+
+// Array creato da getElementsByClassName
+console.log(document.getElementsByClassName('player-name'));
+document.getElementsByClassName('player-name').innerHTML = player_name// --> NON FUNZIONA !!!
+
 document.getElementById('number-of-games').innerHTML = number_of_games;
 
 // ************* Game - Output in Console & HTML *************
