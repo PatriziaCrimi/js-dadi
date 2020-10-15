@@ -22,7 +22,7 @@ for (i = 0; i < number_of_games; i++) {
   var match_number = i + 1;
   console.log('*** Match number ' + match_number + ' ***.');
   // Roll of the dice
-  alert('Your turn! Roll the dice!');
+  alert('Match number ' + match_number + '. Your turn! Roll the dice!');
   var random_number_player = Math.floor(Math.random() * 6) + 1;
   score_player.push(random_number_player);
   var random_number_pc = Math.floor(Math.random() * 6) + 1;
@@ -66,8 +66,8 @@ for (i = 0; i < score_pc.length; i++) {
 }
 console.log('COMPUTER\'S RESULTS')
 console.log('The computer\'s highest score is: ' + highest_score_pc + '.');
-console.log('The array containing the pc score has ' + score_pc.length + ' elements.');
-console.log('They are: ' + score_pc + '.');
+console.log('The array containing the pc score has ' + score_pc.length + ' elements. They are:');
+console.log(score_pc);
 console.log(' ');
 
 // Player's highest score
@@ -80,8 +80,8 @@ for (i = 0; i < score_player.length; i++) {
 }
 console.log(player_name + '\'s RESULTS')
 console.log(player_name + '\'s highest score is: ' + highest_score_player + '.');
-console.log('The array containing the player\'s score has ' + score_player.length + ' elements.');
-console.log('They are: ' + score_player + '.');
+console.log('The array containing the player\'s score has ' + score_player.length + ' elements. They are:');
+console.log(score_player);
 console.log(' ');
 
 // *** Output in HTML ***
@@ -100,7 +100,7 @@ if (highest_score_player > highest_score_pc) {
   console.log('The highest score is ' + highest_score_pc + ' and it was scored by the computer.');
   // Print in HTML
   document.getElementById('highest-score').innerHTML = highest_score_pc;
-  document.getElementById('best-player').innerHTML = 'the computer';
+  document.getElementById('best-player').innerHTML = 'the computer.';
 } else {
   console.log('The highest score is ' + highest_score_player + ' and it was scored by both the computer and ' + player_name + '.');
   // Print in HTML

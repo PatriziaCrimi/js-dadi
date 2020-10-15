@@ -6,17 +6,26 @@ h1 {
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  padding: 50px 0;
+  padding: 50px 0 30px;
+  color: #04B486;
+  text-shadow: 3px 3px #088A68;
 }
 
 h2 {
   font-weight: 800;
-  padding: 30px 0;
+  padding-bottom: 20px;
+}
+
+h3 {
+  padding: 20px 0 20px 10px;
+  font-weight: 700;
+  color: #B45F04;
+  text-shadow: 1px 1px #F7D358;
 }
 
 p {
   font-size: 20px;
-  padding-left: 20px ;
+  padding-left: 20px;
 }
 
 span {
@@ -30,11 +39,48 @@ span {
   background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
 }
 
+.game-info-section,
+.last-game-section,
+.best-results-section {
+  padding: 20px 0;
+}
+
+.best-results-section p {
+  padding-left: 40px;
+}
+
+.best-results-section span#highest-score {
+  color: #B40404;
+}
+
 /******************** Media Query *********************/
 
 /* Responsive - Breakpoint Medium 768px md */
 @media screen and (min-width: 768px) {
-  h2, h3, p {
+  .game-info-section,
+  .last-game-section,
+  .best-results-section {
     text-align: center;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  h3, p, .best-results-section p {
+    padding-left: 0;
+  }
+}
+
+/* Responsive - Breakpoint Extra Large 1200px xl */
+@media screen and (min-width: 1200px) {
+  .game-info-section,
+  .last-game-section,
+  .best-results-section {
+    padding: 30px 0;
+  }
+
+  h1 {
+    font-size: 60px;
   }
 }
