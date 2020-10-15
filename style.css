@@ -34,15 +34,42 @@ span {
 
 #page-wrapper {
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   background: rgb(34,193,195);
   background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+}
+
+h1::before,
+h1::after {
+  content: '\f522';
+  font-weight: 700;
+  font-size: 40px;
+  font-family: "Font Awesome 5 Free";
+  color: #04B486;
+  text-shadow: 3px 3px #088A68;
+}
+
+h1::before {
+  margin-right: 30px;
+}
+
+h1::after {
+  margin-left: 30px;
 }
 
 .game-info-section,
 .last-game-section,
 .best-results-section {
   padding: 20px 0;
+}
+
+.best-results-section i {
+  color: #04B486;
+  text-shadow: 3px 3px #088A68;
+  font-weight: 700;
+  font-size: 70px;
+  margin-bottom: 20px;
+  display: block;
 }
 
 .best-results-section p {
@@ -74,13 +101,32 @@ span {
 
 /* Responsive - Breakpoint Extra Large 1200px xl */
 @media screen and (min-width: 1200px) {
+  h1 {
+    font-size: 60px;
+  }
+
+  h1::before,
+  h1::after {
+    font-size: 60px;
+  }
+
+  h1::before {
+    margin-right: 60px;
+  }
+
+  h1::after {
+    margin-left: 60px;
+  }
+
   .game-info-section,
   .last-game-section,
   .best-results-section {
     padding: 30px 0;
   }
 
-  h1 {
-    font-size: 60px;
+  .best-results-section i {
+    font-weight: 900;
+    font-size: 80px;
+    margin-bottom: 30px;
   }
 }
