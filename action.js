@@ -13,19 +13,24 @@ console.log(' ');
 
 // ******************* Print data in HTML *******************
 
-// Array creato da getElementsByClassName
+// Array created by .getElementsByClassName  --> check in console
 console.log(document.getElementsByClassName('player-name'));
-document.getElementsByClassName('player-name').innerHTML = player_name// --> NON FUNZIONA !!!
-
+console.log(' ');
+// Print player name
+for (var i = 0; i < document.getElementsByClassName('player-name').length; i++) {
+  document.getElementsByClassName('player-name')[i].innerHTML = player_name;
+}
+// Print number of games
 document.getElementById('number-of-games').innerHTML = number_of_games;
 
-// ************* Game - Output in Console & HTML *************
+
+// ************* Dice Game - Output in Console & HTML *************
 console.log('SCORE');
-for (var i = 0; i < number_of_games; i++) {
+for (i = 0; i < number_of_games; i++) {
   // Match counts
   var match_number = i + 1;
   console.log('*** Match number ' + match_number + ' ***.');
-  // Roll of the dice
+  // Dice rolls
   alert('Match number ' + match_number + '. Your turn! Roll the dice!');
   var random_number_player = Math.floor(Math.random() * 6) + 1;
   score_player.push(random_number_player);
