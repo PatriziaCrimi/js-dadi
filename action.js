@@ -21,7 +21,7 @@ document.getElementById('number-of-games').innerHTML = number_of_games;
 
 // ************* Game - Output in Console & HTML *************
 console.log('SCORE');
-for (i = 0; i < number_of_games; i++) {
+for (var i = 0; i < number_of_games; i++) {
   // Match counts
   var match_number = i + 1;
   console.log('*** Match number ' + match_number + ' ***.');
